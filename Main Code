@@ -1,0 +1,14 @@
+# Imports
+from buildhat import Motor
+from buildhat import ForceSensor
+motor = Motor('B')
+motor2 = Motor('A')
+button = ForceSensor('C')
+
+print('Press the button for toothpaste')
+
+while True:
+    button.wait_until_pressed()
+    motor.run_for_degrees(-45)
+    motor2.run_for_degrees(-250)
+    print('Enjoy!')
